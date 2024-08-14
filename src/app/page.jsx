@@ -29,9 +29,9 @@ export default function Home() {
       <div className="w-full lg:w-1/2 flex items-center justify-center my-auto dark:bg-dark dark:text-white">
         <div className="absolute top-[25px] right-[25px]">
           <ToggleSwitch />
-          <div className="flex items-center justify-center font-semibold">
+          {/* <div className="flex items-center justify-center font-semibold">
             Theme
-          </div>
+          </div> */}
         </div>
         <div >
           <div className="text-4xl font-bold mb-2 dark:bg-dark dark:text-white">
@@ -48,7 +48,7 @@ export default function Home() {
                 width={15.37}
                 height={15.37}
               />
-              <div className="ml-2 flex items-center justify-center text-slate-500 text-sm font-bold">
+              <div className="ml-2 flex px-1 items-center justify-center text-slate-500 text-sm font-bold">
                 Sign in with Google
               </div>
             </div>
@@ -59,7 +59,7 @@ export default function Home() {
                 width={15.37}
                 height={15.37}
               />
-              <div className="ml-2 flex items-center justify-center text-slate-500 text-sm font-bold">
+              <div className="ml-2 px-1 flex items-center justify-center text-slate-500 text-sm font-bold">
                 Sign in with Apple
               </div>
             </div>

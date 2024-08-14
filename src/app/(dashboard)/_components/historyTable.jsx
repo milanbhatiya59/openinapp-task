@@ -9,26 +9,28 @@ export default function HistoryTable({ uploadedFiles, handleTagSelection }) {
             ...prevState,
             [fileId]: newTag
         }));
-        if (newTag) {
+
+        const file = uploadedFiles.find(file => file.id === fileId);
+        if (file && !file.tags.includes(newTag) && newTag) {
             handleTagSelection(fileId, newTag);
-            setSelectedTag(prevState => ({
-                ...prevState,
-                [fileId]: ''
-            }));
         }
     };
 
     const handleTagRemove = (fileId, tagToRemove) => {
         handleTagSelection(fileId, tagToRemove, 'remove');
+        setSelectedTag(prevState => ({
+            ...prevState,
+            [fileId]: ''
+        }));
     };
 
     return (
         <div className="w-full">
-            <div className="w-full bg-slate-200 mt-10 my-6 px-6 py-4 rounded-md dark:bg-black dark:text-white">
+            <div className="w-full  bg-slate-200 mt-10 my-6 px-6 py-4 rounded-md dark:bg-black dark:text-white">
                 {/* This div is horizontally scrollable only if content overflows */}
-                <div className="w-full overflow-x-auto">
+                <div className="w-full">
                     {/* Min-width ensures that the content will only scroll if it exceeds the viewport width */}
-                    <div className="min-w-full lg:min-w-[700px]">
+                    <div className="min-w-full lg:min-w-[700px] max-md:overflow-y-scroll">
                         <div className="flex mb-4">
                             <div className="w-[8%] text-center text-md my-auto">Sr. no</div>
                             <div className="p-2 text-center w-[25%] my-auto text-md">
@@ -69,7 +71,7 @@ export default function HistoryTable({ uploadedFiles, handleTagSelection }) {
                                         <option value="Tag 5">Tag 5</option>
                                     </select>
                                 </div>
-                                <div className="w-[25%] my-auto">
+                                <div className="w-[25%] my-auto flex gap-[2px]">
                                     {file.tags.map((tag, tagIndex) => (
                                         <span
                                             key={tagIndex}
@@ -78,7 +80,7 @@ export default function HistoryTable({ uploadedFiles, handleTagSelection }) {
                                             {tag}
                                             <button
                                                 onClick={() => handleTagRemove(file.id, tag)}
-                                                className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-purple text-white rounded-full w-4 h-4 flex items-center justify-center text-sm"
+                                                className="absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/2 bg-red-400 text-white rounded-full w-4 h-4 flex items-center justify-center text-sm"
                                             >
                                                 &times;
                                             </button>
