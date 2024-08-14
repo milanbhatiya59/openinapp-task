@@ -15,7 +15,7 @@ const DashboardLayout = ({ children }) => {
             <div className={`hidden md:flex h-full fixed inset-y-0 z-50 dark:text-white dark:bg-black transition-all duration-300 ${isSidebarCollapsed ? "w-[154px]" : "w-[285px]"}`}>
                 <Sidebar toggleSidebar={handleSidebarToggle} isCollapsed={isSidebarCollapsed} />
             </div>
-            <main className={`flex-1 transition-all duration-300 ${isSidebarCollapsed ? "ml-[154px]" : "ml-[285px]"} h-screen dark:bg-light-dark`}>
+            <main className={`flex-1 transition-all duration-300 ${isSidebarCollapsed ? "md:ml-[154px]" : "md:ml-[285px]"} ml-0 h-screen dark:bg-light-dark`}>
                 {children}
             </main>
         </div>

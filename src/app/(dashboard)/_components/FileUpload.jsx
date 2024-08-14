@@ -93,7 +93,7 @@ const FileUpload = () => {
             <div>
                 {uploadedFiles.length > 0 && (
                     <div className='mx-10'>
-                        <div className='font-semibold text-2xltext-white dark:text-dark'>
+                        <div className='font-semibold text-2xl text-dark dark:text-white'>
                             Uploads
                         </div>
                         <HistoryTable

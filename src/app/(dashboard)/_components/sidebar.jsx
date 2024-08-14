@@ -35,10 +35,10 @@ export const Sidebar = ({ isCollapsed, toggleSidebar }) => {
             >
                 <SidebarRoutes isCollapsed={isCollapsed} />
             </div>
-            <div className="flex justify-center mt-auto mb-4">
-                <div>
+            <div className="flex justify-start mt-auto mb-4">
+                <div className='flex mx-3'>
                     <ToggleSwitch />
-                    <div className="flex items-center justify-center font-semibold">
+                    <div className="flex items-center justify-center font-semibold mx-3">
                         Theme
                     </div>
                 </div>

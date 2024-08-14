@@ -8,18 +8,26 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="flex flex-col lg:flex-row h-screen bg-slate-100 dark:bg-dark">
-      {/* <div className="absolute bottom-20 left-[21vh] z-20">
-        <ToggleButton />
-      </div> */}
-
-      <div className="w-full lg:w-1/2 md:flex items-center justify-center my-3 hidden lg:block">
-        <div className="relative w-full h-full">
+      <div className="hidden lg:flex w-full lg:w-1/2 items-center justify-center">
+        <div className="my-3 w-full h-full">
           <SignInImage />
         </div>
       </div>
 
+      <div className="lg:hidden bg-purple h-20 flex items-center">
+        <div className="ml-[25px]">
+          <Image
+            src={'/baseLogoWhite.svg'}
+            width={28}
+            height={28}
+          />
+        </div>
+        <div className="text-white font-bold ml-4 text-2xl">
+          Base
+        </div>
+      </div>
       <div className="w-full lg:w-1/2 flex items-center justify-center my-auto dark:bg-dark dark:text-white">
-        <div className="absolute top-4 right-6">
+        <div className="absolute top-[25px] right-[25px]">
           <ToggleSwitch />
           <div className="flex items-center justify-center font-semibold">
             Theme
